@@ -25,22 +25,26 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [csvFile, setCsvFile] = useState<File | null>(null);
-  const [useSample, setUseSample] = useState(false);
+  const [useSample, setUseSample] = useState(true);
+  const [features, setFeatures] = useState<string[]>([]);
+  const [weights, setWeights] = useState<Record<string, number>>({});
+  const [showWeights, setShowWeights] = useState(false);
 
   useEffect(() => {
     if (csvFile) {
-      fetchDataFromFile(csvFile, k);
+      fetchDataFromFile(csvFile, k, weights);
     } else if (useSample) {
-      fetchSampleData(k);
+      fetchSampleData(k, weights);
     }
-  }, [k, csvFile, useSample]);
+  }, [k, csvFile, useSample, weights]);
 
-  const fetchDataFromFile = async (file: File, kValue: number) => {
+  const fetchDataFromFile = async (file: File, kValue: number, weightsConfig: Record<string, number>) => {
     setLoading(true);
     try {
       const formData = new FormData();
       formData.append('file', file);
       formData.append('k', kValue.toString());
+      formData.append('weights', JSON.stringify(weightsConfig));
 
       const res = await fetch('/api/process-upload', {
         method: 'POST',
@@ -48,6 +52,21 @@ export default function Home() {
       });
       const result = await res.json();
       setData(result.profiles);
+
+      // Extract features from first profile's metadata
+      if (result.profiles && result.profiles.length > 0) {
+        const featureList = Object.keys(result.profiles[0].metadata);
+        setFeatures(featureList);
+
+        // Initialize weights to 1.0 for new features
+        const newWeights: Record<string, number> = {};
+        featureList.forEach(feature => {
+          newWeights[feature] = weightsConfig[feature] || 1.0;
+        });
+        if (JSON.stringify(newWeights) !== JSON.stringify(weightsConfig)) {
+          setWeights(newWeights);
+        }
+      }
     } catch (error) {
       console.error("Error processing file:", error);
     } finally {
@@ -55,12 +74,31 @@ export default function Home() {
     }
   };
 
-  const fetchSampleData = async (kValue: number) => {
+  const fetchSampleData = async (kValue: number, weightsConfig: Record<string, number>) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/process?k=${kValue}`);
+      const params = new URLSearchParams({
+        k: kValue.toString(),
+        weights: JSON.stringify(weightsConfig)
+      });
+      const res = await fetch(`/api/process?${params}`);
       const result = await res.json();
       setData(result.profiles);
+
+      // Extract features from first profile's metadata
+      if (result.profiles && result.profiles.length > 0) {
+        const featureList = Object.keys(result.profiles[0].metadata);
+        setFeatures(featureList);
+
+        // Initialize weights to 1.0 for new features
+        const newWeights: Record<string, number> = {};
+        featureList.forEach(feature => {
+          newWeights[feature] = weightsConfig[feature] || 1.0;
+        });
+        if (JSON.stringify(newWeights) !== JSON.stringify(weightsConfig)) {
+          setWeights(newWeights);
+        }
+      }
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
@@ -139,6 +177,12 @@ export default function Home() {
             </label>
             {data.length > 0 && (
               <>
+                <button
+                  onClick={() => setShowWeights(!showWeights)}
+                  className="px-3 py-1.5 text-sm border border-border rounded hover:bg-muted transition-colors"
+                >
+                  {showWeights ? "Hide" : "Adjust"} Weights
+                </button>
                 <span className="text-sm text-muted-foreground">k={k}</span>
                 <Slider
                   value={[k]}
@@ -152,6 +196,35 @@ export default function Home() {
             )}
           </div>
         </div>
+
+        {/* Weight Adjustment Panel */}
+        {showWeights && data.length > 0 && (
+          <div className="border border-border rounded-lg p-4">
+            <h3 className="text-sm font-medium mb-3">Feature Weights</h3>
+            <div className="grid grid-cols-2 gap-4">
+              {features.map((feature) => (
+                <div key={feature} className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <label className="text-sm">{feature}</label>
+                    <span className="text-xs text-muted-foreground">
+                      {weights[feature]?.toFixed(1) || "1.0"}
+                    </span>
+                  </div>
+                  <Slider
+                    value={[weights[feature] || 1.0]}
+                    onValueChange={(val) => {
+                      setWeights({ ...weights, [feature]: val[0] });
+                    }}
+                    min={0}
+                    max={3}
+                    step={0.1}
+                    className="w-full"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Main Content */}
         <div className="flex-1 flex gap-6 min-h-0">

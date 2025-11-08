@@ -33,39 +33,100 @@ export default function HowItWorks() {
               similar items based on multiple features. The visualization shows how items are
               positioned in a 2D space based on their similarity across various attributes.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed mb-4">
               <span className="font-semibold text-foreground">Works with any CSV:</span> Upload any CSV file with any columns.
               The first column is treated as the identifier/name, and all other columns are used as features
               for similarity matching. Multi-valued fields (like "apple; banana; orange") are automatically
               detected if they contain semicolons.
             </p>
+            <p className="text-muted-foreground leading-relaxed">
+              <span className="font-semibold text-foreground">Sample data auto-loads:</span> The demo page automatically
+              loads example student profile data when you first visit, so you can immediately explore how the KD-tree
+              visualization works without uploading a file.
+            </p>
+          </section>
+
+          {/* Using the Application */}
+          <section>
+            <h2 className="text-xl font-semibold mb-3">Using the Application</h2>
+            <div className="space-y-4 text-sm">
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">Controls:</h3>
+                <ul className="space-y-2 text-muted-foreground ml-4">
+                  <li><span className="font-semibold text-foreground">k-slider:</span> Adjust the number of nearest neighbors to find (1-10)</li>
+                  <li><span className="font-semibold text-foreground">Sample CSV:</span> Load the default example dataset</li>
+                  <li><span className="font-semibold text-foreground">Upload CSV:</span> Load your own data from a CSV file</li>
+                  <li><span className="font-semibold text-foreground">Adjust Weights:</span> Show/hide feature weight controls</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">Interactions:</h3>
+                <ul className="space-y-2 text-muted-foreground ml-4">
+                  <li><span className="font-semibold text-foreground">Hover:</span> Move mouse over dots to see connections and info</li>
+                  <li><span className="font-semibold text-foreground">Click:</span> Click a dot to freeze the selection and explore</li>
+                  <li><span className="font-semibold text-foreground">Click again:</span> Unfreeze and return to hover mode</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">Weight Adjustment:</h3>
+                <p className="text-muted-foreground mb-2">
+                  Click "Adjust Weights" to reveal sliders for each feature. Modify weights to control feature importance:
+                </p>
+                <ul className="space-y-2 text-muted-foreground ml-4">
+                  <li><span className="font-semibold text-foreground">0.0:</span> Feature completely ignored in similarity calculation</li>
+                  <li><span className="font-semibold text-foreground">1.0:</span> Default weight (equal importance)</li>
+                  <li><span className="font-semibold text-foreground">2.0-3.0:</span> Feature 2-3x more important than default</li>
+                </ul>
+                <p className="text-muted-foreground mt-2">
+                  The visualization updates in real-time as you adjust weights, recalculating nearest neighbors based on
+                  your custom similarity metric.
+                </p>
+              </div>
+            </div>
           </section>
 
           {/* Step 1: Feature Encoding */}
           <section>
             <h2 className="text-xl font-semibold mb-3">1. Feature Encoding</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Each item is converted into a high-dimensional vector using one-hot encoding. For categorical features,
-              each unique value becomes a separate dimension. For multi-valued features (detected by semicolons),
-              each unique item becomes its own dimension.
+              Each item is converted into a high-dimensional vector using one-hot encoding with configurable weights.
+              For categorical features, each unique value becomes a separate dimension. For multi-valued features
+              (detected by semicolons), each unique item becomes its own dimension.
             </p>
             <div className="bg-muted rounded-lg p-4 font-mono text-sm overflow-x-auto">
               <pre>{`// Example: CSV with columns Fruit, Color, Tags
 // Row: "Apple", "Red", "Sweet; Crisp"
+// Weights: Color=1.5, Tags=2.0
 
-// Becomes vector:
+// Becomes weighted vector:
 [
-  // Color dimension
-  1, 0, 0,  // Red=1, Green=0, Yellow=0
+  // Color dimension (weight=1.5)
+  1.5, 0, 0,  // Red=1.5, Green=0, Yellow=0
 
-  // Tags dimension (multi-valued)
-  1, 1, 0   // Sweet=1, Crisp=1, Sour=0
+  // Tags dimension (weight=2.0, multi-valued)
+  2.0, 2.0, 0 // Sweet=2.0, Crisp=2.0, Sour=0
 ]`}</pre>
             </div>
             <p className="text-muted-foreground leading-relaxed mt-4">
-              All features have equal weight (1.0) by default, but you can optionally configure custom weights
-              for specific features to prioritize certain attributes in the similarity matching.
+              <span className="font-semibold text-foreground">Default weights:</span> All features start with weight 1.0
+              (equal importance). Use the "Adjust Weights" button in the UI to customize how much each feature contributes
+              to similarity matching. Weights range from 0 (feature completely ignored) to 3.0 (feature 3x more important).
             </p>
+            <div className="bg-muted rounded-lg p-4 font-mono text-sm overflow-x-auto mt-4">
+              <pre>{`class FeatureEncoder {
+  private weights: Record<string, number> = {};
+
+  constructor(weights?: Record<string, number>) {
+    this.weights = weights || {};  // Default to empty
+  }
+
+  encode(profile: Profile): number[] {
+    // ...
+    const weight = this.weights[key] || 1.0;  // Default 1.0
+    vector[position++] = category === value ? weight : 0;
+  }
+}`}</pre>
+            </div>
           </section>
 
           {/* Step 2: KD-Tree Construction */}

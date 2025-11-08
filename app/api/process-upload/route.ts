@@ -6,6 +6,8 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
     const file = formData.get("file") as File;
     const k = parseInt(formData.get("k") as string || "5");
+    const weightsParam = formData.get("weights") as string;
+    const weights = weightsParam ? JSON.parse(weightsParam) : undefined;
 
     if (!file) {
       return NextResponse.json(
@@ -18,7 +20,7 @@ export async function POST(request: NextRequest) {
     const csvText = await file.text();
 
     // Process data
-    const data = processData(csvText, k);
+    const data = processData(csvText, k, weights);
 
     return NextResponse.json(data);
   } catch (error) {
