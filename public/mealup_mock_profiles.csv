@@ -1,0 +1,51 @@
+Name,ResCollege,Year,Major,Hobbies,Gender,Hometown,DietaryPreference,PreferredDiningHall,Availability,Languages
+Taylor Martinez,Rocky,Senior,MAE,Film; Gaming; Guitar; Running,Prefer not to say,"New York, NY",Kosher,Whitman DH,Fri Lunch; Sun Brunch; Wed Dinner; Wed Lunch,English; Korean; Bengali
+Cameron Patel,Whitman,Senior,ORF,Chess; Entrepreneurship,Prefer not to say,"New York City, NY",Vegetarian,Yeh/NCW DH,Fri Lunch; Mon Dinner; Thu Dinner; Tue Dinner,English; Mandarin
+Morgan Martin,Rocky,Freshman,ORF,Debate; Entrepreneurship; Tennis,Male,"New York City, NY",Gluten-Free,Forbes DH,Fri Dinner; Mon Brunch; Sun Brunch; Sun Dinner,English
+Mila Thomas,Yeh,Junior,MAE,Art; Chess; Film; Guitar,Female,"New York, NY",Gluten-Free,Whitman DH,Fri Lunch; Mon Brunch; Tue Dinner,English; Hindi
+Jude Garcia,Yeh,Freshman,SPIA,Music; Theater; Writing,Prefer not to say,"New York, NY",Omnivore,Yeh/NCW DH,Fri Lunch; Mon Lunch; Sat Dinner,English; Hindi
+Casey Lewis,Yeh,Sophomore,CHM,Film; Reading; Running,Prefer not to say,"New York, NY",Pescatarian,Forbes DH,Mon Brunch; Mon Dinner,English
+Jamie Nguyen,Whitman,Junior,ECE,Debate; Reading; Volunteering; Writing,Prefer not to say,"New York, NY",Gluten-Free,Butler DH,Mon Brunch; Mon Lunch; Sat Brunch,English
+Sydney Lewis,Butler,Sophomore,MOL,Debate; Gaming; Hiking; Singing,Prefer not to say,"New York, NY",Gluten-Free,Butler DH,Mon Brunch; Mon Dinner; Wed Lunch,English; Hindi; Arabic
+Morgan Thompson,Mathey,Sophomore,MAE,Photography; Writing,Prefer not to say,"Houston, TX",Gluten-Free,Yeh/NCW DH,Mon Brunch; Thu Lunch,English; Spanish; Mandarin
+Jordan Chen,NCW,Freshman,CHM,Cooking; Debate; Rowing,Prefer not to say,"San Diego, CA",Gluten-Free,Yeh/NCW DH,Mon Brunch; Tue Lunch,English
+Rowan Johnson,NCW,Senior,ECO,Basketball; Piano; Running,Female,"Baltimore, MD",Pescatarian,Whitman DH,Thu Dinner; Tue Dinner; Wed Lunch,English
+Leo Martin,Yeh,Sophomore,ECO,Soccer; Tennis,Nonbinary,"Boston, MA",Pescatarian,Butler DH,Mon Lunch; Sat Brunch; Sat Dinner; Thu Lunch,English; Hindi
+Noah Brown,Yeh,Sophomore,PHY,Art; Hiking; Robotics; Rowing,Prefer not to say,"New York City, NY",Vegan,Yeh/NCW DH,Sat Brunch; Sat Dinner; Tue Dinner,English; Japanese; Korean
+Zoe Taylor,Whitman,Sophomore,CHM,Dance; Gaming; Rowing; Theater,Male,"Baltimore, MD",Halal,Whitman DH,Fri Dinner; Mon Lunch; Sat Brunch; Sat Dinner,English
+Drew Williams,Yeh,Freshman,SPIA,Guitar; Volunteering,Prefer not to say,"Columbus, OH",Vegan,Whitman DH,Sat Brunch; Sun Dinner; Thu Lunch,English; Japanese
+Avery Johnson,Mathey,Junior,MAE,Film; Singing,Prefer not to say,"Miami, FL",Vegan,Butler DH,Sat Dinner; Tue Lunch,English; Hindi
+Emma Martinez,Rocky,Junior,CBE,Chess; Robotics; Rowing; Soccer,Female,"Austin, TX",Vegetarian,RoMa DH,Fri Dinner; Sat Brunch,English; Bengali; Arabic
+Devon Robinson,Butler,Sophomore,SPIA,Entrepreneurship; Theater,Nonbinary,"Phoenix, AZ",Vegetarian,Whitman DH,Sat Dinner; Thu Dinner; Tue Dinner,English; Mandarin
+Parker Martin,NCW,Senior,COS,Dance; Guitar; Hiking,Prefer not to say,"New York City, NY",Kosher,Yeh/NCW DH,Fri Dinner; Mon Brunch; Mon Lunch; Sun Dinner,English; Japanese; Bengali
+Riley Martinez,Yeh,Sophomore,PHY,Art; Piano; Reading; Tennis,Prefer not to say,"Princeton, NJ",Vegetarian,RoMa DH,Mon Brunch; Mon Lunch; Tue Dinner,English; Spanish
+Casey Robinson,Mathey,Sophomore,COS,Coding; Music; Photography; Running,Prefer not to say,"San Diego, CA",Pescatarian,Whitman DH,Fri Dinner; Sat Brunch,English
+Rowan Robinson,Rocky,Sophomore,ECO,Singing; Writing,Male,"Princeton, NJ",Omnivore,Whitman DH,Fri Lunch; Mon Brunch; Mon Lunch,English; Arabic; French
+Hayden Wilson,Rocky,Sophomore,MOL,Coding; Hiking; Piano; Volunteering,Prefer not to say,"Columbus, OH",Halal,Butler DH,Fri Lunch; Sat Brunch; Wed Lunch,English
+Mason Anderson,Butler,Freshman,CBE,Guitar; Soccer,Female,"Raleigh, NC",Gluten-Free,Whitman DH,Mon Lunch; Thu Lunch,English; Mandarin
+Jamie Chen,Mathey,Senior,ECO,Basketball; Cooking; Writing,Nonbinary,"Raleigh, NC",Vegan,Whitman DH,Mon Brunch; Mon Dinner; Mon Lunch,English; Mandarin; Bengali
+Zoe Patel,Whitman,Sophomore,HIS,Entrepreneurship; Piano; Reading; Running,Male,"Nashville, TN",Vegan,Forbes DH,Fri Dinner; Tue Dinner; Wed Lunch,English; Bengali
+Jordan Thomas,Yeh,Freshman,COS,Basketball; Debate; Piano; Soccer,Nonbinary,"NYC, NY",Gluten-Free,Forbes DH,Mon Brunch; Thu Lunch; Wed Lunch,English; Spanish
+Jamie Perez,Mathey,Junior,MAE,Music; Soccer,Female,"Philadelphia, PA",Kosher,Whitman DH,Fri Lunch; Sun Dinner; Wed Lunch,English; French
+Jamie Moore,NCW,Sophomore,ECE,Chess; Piano; Volunteering,Female,"Atlanta, GA",Halal,Forbes DH,Fri Dinner; Sun Dinner; Thu Lunch; Tue Dinner,English; Mandarin
+Noah Lopez,Whitman,Senior,CBE,Debate; Theater; Writing,Prefer not to say,"San Francisco, CA",Gluten-Free,Yeh/NCW DH,Fri Dinner; Mon Brunch,English
+Sam Martinez,Yeh,Junior,CHM,Coding; Entrepreneurship; Gaming; Rowing,Prefer not to say,"Chicago, IL",Pescatarian,Forbes DH,Fri Dinner; Tue Dinner,English
+Eli Lopez,NCW,Freshman,CHM,Chess; Film; Robotics; Soccer,Female,"San Francisco, CA",Omnivore,Yeh/NCW DH,Fri Dinner; Mon Dinner; Tue Dinner; Wed Lunch,English
+Jordan Thompson,Mathey,Junior,ORF,Chess; Entrepreneurship; Guitar; Soccer,Male,"New York, NY",Pescatarian,Butler DH,Fri Lunch; Mon Dinner; Sat Brunch; Sun Dinner,English; German; Mandarin
+Emma Lee,Yeh,Junior,ECE,Hiking; Tennis; Volunteering; Writing,Male,"Madison, WI",Vegetarian,RoMa DH,Tue Dinner; Wed Dinner; Wed Lunch,English; Spanish
+Ethan Nguyen,Butler,Junior,MAE,Basketball; Cooking; Hiking; Rowing,Female,"Raleigh, NC",Halal,Butler DH,Sat Brunch; Thu Dinner,English; Spanish
+Aiden Lopez,NCW,Sophomore,ECO,Piano; Reading,Prefer not to say,"San Francisco, CA",Vegan,RoMa DH,Sun Dinner; Thu Lunch; Tue Lunch; Wed Lunch,English
+Kai Lopez,Butler,Junior,ECE,Basketball; Robotics; Soccer,Nonbinary,"Princeton, NJ",Vegetarian,Butler DH,Fri Lunch; Wed Dinner,English
+Nora Lopez,Whitman,Senior,MAT,Art; Cooking,Female,"NYC, NY",Omnivore,Forbes DH,Mon Lunch; Sat Dinner; Wed Lunch,English; Arabic; Mandarin
+Hayden Clark,Butler,Freshman,ECO,Film; Theater; Volunteering,Prefer not to say,"New York City, NY",Gluten-Free,Forbes DH,Fri Dinner; Sun Brunch; Sun Dinner; Wed Lunch,English; Mandarin
+Zoe Martinez,Mathey,Senior,PHY,Dance; Gaming; Tennis; Writing,Male,"Houston, TX",Vegetarian,Whitman DH,Tue Dinner; Tue Lunch; Wed Dinner,English; Hindi
+Jude Taylor,Whitman,Junior,HIS,Basketball; Guitar,Female,"New York, NY",Halal,Whitman DH,Mon Dinner; Sun Dinner; Wed Dinner; Wed Lunch,English; Korean
+Cameron Thomas,Whitman,Freshman,PHY,Basketball; Film; Piano; Soccer,Nonbinary,"San Diego, CA",Kosher,Yeh/NCW DH,Mon Dinner; Sat Dinner; Wed Lunch,English
+Devon Lewis,Yeh,Junior,HIS,Coding; Gaming; Running; Singing,Nonbinary,"Philadelphia, PA",Vegan,RoMa DH,Sat Dinner; Thu Dinner; Thu Lunch,English; Bengali
+Jude Ramirez,NCW,Sophomore,MOL,Piano; Reading,Male,"New York City, NY",Omnivore,Forbes DH,Fri Dinner; Mon Lunch; Sun Dinner,English
+Ivy Patel,Rocky,Senior,PHY,Entrepreneurship; Gaming; Guitar; Rowing,Female,"Philadelphia, PA",Omnivore,RoMa DH,Thu Dinner; Tue Dinner,English
+Casey Kim,Mathey,Senior,SPIA,Basketball; Guitar; Music; Soccer,Nonbinary,"San Francisco, CA",Omnivore,Whitman DH,Sun Brunch; Tue Dinner,English; Mandarin; Arabic
+Devon Martin,Yeh,Junior,HIS,Basketball; Photography; Running,Female,"New York City, NY",Vegan,Forbes DH,Thu Dinner; Thu Lunch; Tue Dinner; Tue Lunch,English; Spanish
+Hayden Garcia,Yeh,Freshman,ECO,Debate; Gaming; Photography,Prefer not to say,"Phoenix, AZ",Gluten-Free,Yeh/NCW DH,Fri Lunch; Mon Brunch; Sat Brunch; Wed Dinner,English; Japanese
+Devon Anderson,Yeh,Freshman,COS,Coding; Photography; Piano,Female,"Princeton, NJ",Pescatarian,Yeh/NCW DH,Fri Lunch; Mon Dinner,English; German; Korean
+Sydney Kim,Rocky,Freshman,ECE,Soccer; Theater; Writing,Male,"New York City, NY",Pescatarian,Butler DH,Mon Dinner; Sat Brunch; Sun Brunch; Tue Lunch,English; Mandarin
